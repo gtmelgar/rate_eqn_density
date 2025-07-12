@@ -38,9 +38,9 @@ param.bounds.beta = [1e-6 1e-2];
 % scaling for optimization
 param.scaling.etai = 1; 
 param.scaling.taon = 1e-9;
-param.scaling.gain = 1e5;
-param.scaling.N0   = 1e5;
-param.scaling.eps  = 1e-6;
+param.scaling.gain = 1e5.*param.Vp;
+param.scaling.N0   = 1e5./param.V;
+param.scaling.eps  = 1e-6*param.Vp;
 param.scaling.taop = 1e-12;
 param.scaling.beta = 1e-3;
 param.scaling.omegaP = 1e10;
