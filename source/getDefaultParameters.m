@@ -4,17 +4,14 @@ function param = getDefaultParameters()
 param.V = 6.3e-13; % cm^3 
 param.Vp = 5.32e-10; % cm^3
 
-param.etai = 1; 
-param.taon = 5e-9;
-param.gain = 5e4*param.Vp;
-param.N0   = 1e7/param.V;
-param.eps  = 1e-7*param.Vp;
-param.taop = 4e-12;
-param.beta = 1e-4;
-param.omegaP = 20e9*2*pi;
-
-% param.Gammma = const.V/const.Vp; % unitless (confinement factor)
-% param.vg = 9.196e9; %4.2e9; %7.14e9; %cm/s
+param.etai = 1; % unitless
+param.taon = 5e-9; % seconds 
+param.gain = 2e5*param.Vp;  % cm^3/s
+param.N0   = 5e5/param.V;   % cm^-3
+param.eps  = 1e-6*param.Vp; % cm^3
+param.taop = 4e-12; % seconds
+param.beta = 1e-4;  % unitless
+param.omegaP = 20e9*2*pi; % freq (Hz) * 2pi
 
 % choose what parameters to optimize
 param.opt.etai = 1; 
@@ -32,9 +29,9 @@ param.I     = 10e-3;
 % default bounds for optimization
 param.bounds.etai = [0.4 1]; 
 param.bounds.taon = [1e-9 10e-9];
-param.bounds.gain = [1e4 10e5];
-param.bounds.N0   = [1e5 10e5];
-param.bounds.eps  = [1e-6 1e-5];
+param.bounds.gain = [1e4 10e5].*param.Vp;
+param.bounds.N0   = [1e5 10e5]./param.V;
+param.bounds.eps  = [1e-6 1e-5]*param.Vp;
 param.bounds.taop = [1e-12 8e-12];
 param.bounds.beta = [1e-6 1e-2];
 
