@@ -51,3 +51,6 @@ param.const.h           = 6.6261e-34;
 param.const.lightSpeed  = 299792458;
 param.const.lambda      = 850e-9;
 param.const.freeSpaceFreq = param.const.lightSpeed/param.const.lambda;
+
+% small signal analysis parameters
+param.const.freqAmp = 1e-4;
