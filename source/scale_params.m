@@ -1,4 +1,12 @@
 function opt_param = scale_params(param)
+% scale_params - scales parameters to be optimized using scaling variables 
+%
+% input:
+% param - variables in param.opt which are set to 1 will be optimized and scaled using this function 
+% 
+% output:
+% opt_param - vectorized parameters to optimize
+
 x0cell = fieldnames(param.opt);
 numOptVal = sum(struct2array(param.opt)==1);
 

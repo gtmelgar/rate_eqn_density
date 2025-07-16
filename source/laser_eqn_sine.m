@@ -1,6 +1,11 @@
-%% VCSEL parameters from PV Mena A Simple Rate-Equation-Based Thermal VCSEL Model
-
 function dy = laser_eqn_sine(t,y,param,freq)
+% laser rate equation from: 
+% A. Melgar Multi-Objective Laser Rate Equation Based Parameter Extraction 
+% Using VCSEL Small Signal Response and RIN Spectra
+%
+% removes the need for explicit Ioff
+% TO DO: add thermal variation
+% TO DO: add stochastic noise
 
 laser_current = param.I + param.const.freqAmp*sin(2*pi*freq.*t);
 

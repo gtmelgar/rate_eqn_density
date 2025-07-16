@@ -1,4 +1,12 @@
 function freqRespdB = get_freq_resp(param,freqX)
+% get_freq_resp - calculates difference between measured and calculated frequency response 
+% 
+% input:
+% param - structure consisting of laser parameters
+% freqX - frequency vector in Hz 
+% 
+% output:
+% freqRespdB - calculated frequency response from laser parameters
 
 con_factor = param.V/param.Vp;
 [carrierDen, photonDen] = get_steady_state(param);

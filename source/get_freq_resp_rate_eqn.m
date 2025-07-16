@@ -1,4 +1,13 @@
 function [transferFunction] = get_freq_resp_rate_eqn(param,freqX)
+% get_freq_resp_rate_eqn - calculates difference between measured and
+% calculated frequency response using ode45
+% 
+% input:
+% param - structure consisting of laser parameters
+% freqX - frequency vector in Hz 
+% 
+% output:
+% freqRespdB - calculated frequency response from laser parameters
 
 freqRespSingle = zeros(length(freqX),1);
 numFreqRange = length(freqX);
