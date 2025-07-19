@@ -8,7 +8,7 @@ laser_gen1 = getDefaultParameters();
 laser_gen1.etai = 1; 
 laser_gen1.taon = 2e-9;
 laser_gen1.gain = 4e5.*laser_gen1.Vp;
-laser_gen1.N0   = 4e5.*laser_gen1.V;
+laser_gen1.N0   = 4e5./laser_gen1.V;
 laser_gen1.eps  = 1e-6.*laser_gen1.Vp;
 laser_gen1.taop = 2e-12;
 laser_gen1.beta = 2e-6;
@@ -22,7 +22,7 @@ freqY = get_freq_resp(laser_gen1,freqX);
 
 % extract parameters from freq response 
 laserOpt = getDefaultParameters();
-laser_gen1.opt.etai = 0; % example: disable optimization of etai
+laserOpt.opt.etai = 0; % example: disable optimization of etai
 opt_param = scale_params(laserOpt);
 
 % set up optimization problem
