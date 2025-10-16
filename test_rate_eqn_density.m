@@ -8,7 +8,7 @@ addpath('./source')
 laser = getDefaultParameters();
 laser.I = 5e-3;
 % solve differential equation
-tSpan = [0 10e-9];
+tSpan = [0 2e-9];
 [T45,Y45] = ode45(@(t,y) laser_eqn_static(t,y,laser),tSpan,[0 0]);
 % analytical solution
 [carrierDen, photonDen] = get_steady_state(laser);
