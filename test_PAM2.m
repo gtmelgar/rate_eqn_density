@@ -12,7 +12,7 @@ laser_gen1.beta = 2e-6;
 laser_gen1.omegaP = 20e9*2*pi;
 
 % drive current parameters
-num_bits = 200;
+num_bits = 100;
 bit_rate = 40e9;
 samp_per_symbol = 16;
 bias_current = 4e-3;
@@ -45,9 +45,11 @@ xlabel('time (ns)')
 yyaxis right
 plot(t_span/1e-9,laser_gen1.I(1:end))
 ylabel('drive current (mA)')
+legend({'photon density', 'filtered drive current'})
 
 subplot(2,1,2);
 plot(t_span,drive_current);hold on
 plot(t_span,laser_gen1.I(1:end))
 xlabel('time(ns)')
 ylabel('current(mA)')
+legend({'Ideal drive current', 'Filtered drive current'})

@@ -16,16 +16,16 @@ tSpan = [0 2e-9];
 % plot results
 figure;
 subplot(2,1,1);
-plot(T45/1e-9,Y45(:,1));
+plot(T45/1e-9,Y45(:,1),'-','LineWidth',2);
 hold on
-plot([T45(1); T45(end)]/1e-9, [carrierDen;carrierDen],'--')
+plot([T45(1); T45(end)]/1e-9, [carrierDen;carrierDen],'--','LineWidth',2)
 xlabel('time(ns)')
 ylabel('carrier density')
 legend({'ode45', 'calculated'})
 subplot(2,1,2); 
-plot(T45/1e-9,Y45(:,2))
+plot(T45/1e-9,Y45(:,2),'-','LineWidth',2);
 hold on
-plot([T45(1); T45(end)]/1e-9, [photonDen;photonDen], '--')
+plot([T45(1); T45(end)]/1e-9, [photonDen;photonDen], '--','LineWidth',2)
 xlabel('time(ns)')
 ylabel('photon density')
 legend({'ode45', 'calculated'})

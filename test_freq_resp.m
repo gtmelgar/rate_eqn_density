@@ -16,8 +16,8 @@ freqY = get_freq_resp(laser,freqX);
 
 % plot results
 figure;
-plot(freqX/1e9, freqY); hold on
-plot(freqX/1e9, transferFunction, '--');
+plot(freqX/1e9, transferFunction,'-','LineWidth',3); hold on
+plot(freqX/1e9, freqY,'--','LineWidth',2);
 xlabel('freq (GHz)')
 ylabel('Magnitude (dB)')
-legend({'calculated', 'ode45'})
+legend({'ode45','calculated'})

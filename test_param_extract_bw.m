@@ -36,8 +36,8 @@ freqYOpt = get_freq_resp(laserOptNew,freqX);
 
 % plot original vs extracted freq. resp.
 figure;
-plot(freqX/1e9,freqY,'-','LineWidth',3);hold on;
-plot(freqX/1e9,freqYOpt,'--','LineWidth',3)
+plot(freqX/1e9,freqY,'-','LineWidth',2);hold on;
+plot(freqX/1e9,freqYOpt,'--','LineWidth',2)
 legend({'Original', 'Extracted'})
 xlabel('Frequency (GHz)')
 ylabel('Mag (dB)')
