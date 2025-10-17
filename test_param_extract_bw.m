@@ -31,14 +31,14 @@ fun = @(x0) bw_error(x0,laserOpt,opt_param,freqX,freqY);
 [x,fval] = fmincon(fun,opt_param.x0_scaled,[],[],[],[],opt_param.lb, opt_param.ub,[],options);
 
 % calculate frequency response using extracted parameters
-laserOptNew = set_params(x,laserOpt,opt_param);
-freqYOpt = get_freq_resp(laserOptNew,freqX);
+laserParamExtracted = set_params(x,laserOpt,opt_param);
+freqYExtracted = get_freq_resp(laserParamExtracted,freqX);
 
 % plot original vs extracted freq. resp.
 figure;
 plot(freqX/1e9,freqY,'-','LineWidth',2);hold on;
-plot(freqX/1e9,freqYOpt,'--','LineWidth',2)
-legend({'Original', 'Extracted'})
+plot(freqX/1e9,freqYExtracted,'--','LineWidth',2)
 xlabel('Frequency (GHz)')
 ylabel('Mag (dB)')
-grid on
+legend({'Generated Response', 'Extracted Response'})
+
